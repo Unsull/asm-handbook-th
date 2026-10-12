@@ -1,0 +1,629 @@
+{
+  "1": [
+    {
+      "prompt": "ข้อใดอธิบาย Attack Surface ได้ถูกต้อง?",
+      "options": [
+        "เฉพาะพอร์ตที่เปิดสู่อินเทอร์เน็ต",
+        "ชุด Interfaces, Identities และ Access Paths ที่อาจถูกใช้เป็นช่องทาง",
+        "รายชื่อ CVE ทั้งหมด",
+        "ความน่าจะเป็นถูกโจมตีในหนึ่งปี"
+      ],
+      "answer": 1,
+      "why": "Attack Surface ครอบคลุม Identity, API, Data Flows และ Trust Relationships ไม่ใช่เฉพาะ Network Ports"
+    },
+    {
+      "prompt": "ในตัวอย่าง Login Form อะไรคือ Attack Vector?",
+      "options": [
+        "หน้า Login",
+        "วิธีทดลองใช้ Credential ที่รั่วไหลเพื่อเข้าสู่ระบบ",
+        "Customer Database",
+        "ระยะเวลาที่เก็บ Logs"
+      ],
+      "answer": 1,
+      "why": "Surface คือช่องทาง ส่วน Vector คือวิธีโจมตีผ่านช่องทางนั้น"
+    },
+    {
+      "prompt": "เหตุใด Asset ที่ไม่มี Public IP ยังต้องประเมิน?",
+      "options": [
+        "เพราะไม่มี Public IP หมายความว่ามี CVE แน่นอน",
+        "เพราะอาจถูกเข้าถึงผ่าน Service Identity หรือ Internal Path",
+        "เพราะเป็น Crown Jewel โดยอัตโนมัติ",
+        "เพราะ Firewall ไม่เกี่ยวข้อง"
+      ],
+      "answer": 1,
+      "why": "Internal Trust และ Privileged Credentials เป็นส่วนหนึ่งของ Attack Surface"
+    },
+    {
+      "prompt": "ขั้นตอน ASM ใดเพิ่มข้อมูล Owner และ Data Classification?",
+      "options": [
+        "Classification/Enrichment",
+        "Packet Routing",
+        "Encryption Only",
+        "Incident Erasure"
+      ],
+      "answer": 0,
+      "why": "Enrichment เติม Context เพื่อใช้ประเมิน Impact และบริหารงาน"
+    },
+    {
+      "prompt": "เมื่อค้นพบ Admin Service ใหม่ ควรเริ่มจากอะไร?",
+      "options": [
+        "ลบทันที",
+        "แจ้งว่าถูกโจมตีแล้ว",
+        "ยืนยัน Environment, Owner, Usage และ Reachability",
+        "เปลี่ยน Port แบบสุ่ม"
+      ],
+      "answer": 2,
+      "why": "ต้องแยก Observation จาก Risk Hypothesis และตรวจ Business Dependency ก่อนเปลี่ยนระบบ"
+    }
+  ],
+  "2": [
+    {
+      "prompt": "Surface ใดอาจเกิดจาก Public Shared Link ของ File SaaS?",
+      "options": [
+        "SaaS/Data Access",
+        "เฉพาะ Physical Switch",
+        "เฉพาะ Hypervisor",
+        "ไม่มี Attack Surface เพราะไม่ใช้ Server ของเรา"
+      ],
+      "answer": 0,
+      "why": "SaaS Sharing Policies และ Tokens เป็นส่วนหนึ่งของ Attack Surface"
+    },
+    {
+      "prompt": "ข้อใดเป็น Identity Attack Surface?",
+      "options": [
+        "เครื่องพิมพ์ที่ปิดเครื่อง",
+        "API Token ที่อ่านและแก้ข้อมูลลูกค้าได้",
+        "จำนวนสีของหน้าเว็บ",
+        "ขนาดจอมอนิเตอร์"
+      ],
+      "answer": 1,
+      "why": "Machine Identity และสิทธิ์ของ Token ต้องอยู่ใน Inventory"
+    },
+    {
+      "prompt": "ทำไม Nmap อย่างเดียวไม่พอสำหรับ Cloud Storage?",
+      "options": [
+        "Cloud Storage ไม่มีความเสี่ยง",
+        "Resource Policy และ IAM ไม่จำเป็นต้องแสดงเป็น Open Port",
+        "เพราะทุก Cloud ต้องเป็น Private",
+        "เพราะ Nmap ใช้งานกับ localhost ไม่ได้"
+      ],
+      "answer": 1,
+      "why": "Cloud Resource APIs/Policies ช่วยเห็นสิทธิ์ที่ Port Scan ไม่ได้แสดง"
+    },
+    {
+      "prompt": "กรณี Software Supply Chain ควรตรวจอะไร?",
+      "options": [
+        "เฉพาะ HTTPS Certificate",
+        "Dependencies, Build Pipeline และ Artifact Trust",
+        "เฉพาะ DNS TTL",
+        "เฉพาะเมนูของเว็บไซต์"
+      ],
+      "answer": 1,
+      "why": "Supply Chain ครอบคลุม Libraries, CI Secrets และ Build Artifacts"
+    },
+    {
+      "prompt": "AI Agent ที่อ่าน Logs และเรียก Refund API ได้เพิ่มความเสี่ยงใด?",
+      "options": [
+        "Tool Permission / Excessive Agency",
+        "ไม่มีความเสี่ยงเพราะเป็น AI",
+        "เฉพาะเครือข่าย Wi-Fi",
+        "เฉพาะ Hardware อายุเก่า"
+      ],
+      "answer": 0,
+      "why": "Agent Tools ต้องมี Server-side Authorization และ Approval"
+    }
+  ],
+  "3": [
+    {
+      "prompt": "Risk Scenario ที่เขียนดีควรมีอะไร?",
+      "options": [
+        "แค่ CVSS",
+        "Asset, Threat Condition, Consequence และ Evidence Status",
+        "แค่ชื่อ Firewall",
+        "แค่จำนวน Port"
+      ],
+      "answer": 1,
+      "why": "สถานการณ์ที่ชัดทำให้ประเมินและสื่อสารผลกระทบได้"
+    },
+    {
+      "prompt": "คะแนน Likelihood 5/5 หมายถึงอะไร?",
+      "options": [
+        "Probability 100% เสมอ",
+        "Rating ตามเกณฑ์องค์กร ไม่ใช่ Probability โดยอัตโนมัติ",
+        "CVSS 5.0",
+        "ความเสียหาย 5 ล้านบาท"
+      ],
+      "answer": 1,
+      "why": "Ordinal Rating ต้องนิยาม Criteria และไม่ควรถูกตีความเป็นความน่าจะเป็นโดยตรง"
+    },
+    {
+      "prompt": "Single Loss 200,000 บาท ARO 0.3 ครั้ง/ปี ALE เท่ากับ?",
+      "options": [
+        "6,000",
+        "60,000",
+        "200,000",
+        "600,000"
+      ],
+      "answer": 1,
+      "why": "ALE = 200,000 × 0.3 = 60,000 บาทต่อปีภายใต้สมมติฐาน"
+    },
+    {
+      "prompt": "การประเมิน Residual Risk ต้องพิจารณาอะไร?",
+      "options": [
+        "Controls ที่ใช้งานจริงและผลการตรวจ",
+        "เปลี่ยนสี Dashboard",
+        "CVSS เพียงอย่างเดียว",
+        "จำนวน Developer"
+      ],
+      "answer": 0,
+      "why": "Residual Risk เป็นความเสี่ยงหลัง Controls ไม่ใช่ตัวเลขที่ลดลงเอง"
+    },
+    {
+      "prompt": "เมื่อข้อมูลเหตุการณ์ไม่พอ ควรทำอะไร?",
+      "options": [
+        "แต่ง Probability ให้ดูละเอียด",
+        "เริ่ม Qualitative และบันทึกความไม่แน่นอน",
+        "หยุด Risk Management ถาวร",
+        "กำหนดทุก Risk เป็น Critical"
+      ],
+      "answer": 1,
+      "why": "ใช้ Qualitative/Hybrid และแสดง Assumptions แทนค่าปลอม"
+    }
+  ],
+  "4": [
+    {
+      "prompt": "Cloud VM ที่เขียนไว้ใน IaC ถือเป็นหลักฐานชนิดใด?",
+      "options": [
+        "Observed Runtime แน่นอน",
+        "Declared/Desired State",
+        "Confirmed Vulnerability",
+        "Retired Asset"
+      ],
+      "answer": 1,
+      "why": "IaC บอกสิ่งที่ประกาศ ไม่ยืนยันว่าทรัพยากรกำลังรัน"
+    },
+    {
+      "prompt": "ทำไมควรแยก Logical Service กับ Container Instance?",
+      "options": [
+        "เพราะ Instance ID เปลี่ยนตามการ Recreate",
+        "เพราะทุก Container เป็น Crown Jewel",
+        "เพราะต้องลบ Logs ทั้งหมด",
+        "เพราะทุก Service ต้องมี Public IP"
+      ],
+      "answer": 0,
+      "why": "Stable Logical ID ช่วยติดตามบริการข้าม Runtime Instances"
+    },
+    {
+      "prompt": "Owner Coverage 80% แสดงว่าอะไร?",
+      "options": [
+        "องค์กรค้นพบ Assets ครบ 80%",
+        "80% ของ Records ในชุดที่ค้นพบมี Owner",
+        "Risk ลดลง 80%",
+        "Patch Coverage 80%"
+      ],
+      "answer": 1,
+      "why": "Denominator คือชุด Assets ที่มีอยู่ใน Inventory ไม่ใช่ Assets ทั้งหมดที่อาจยังไม่ถูกพบ"
+    },
+    {
+      "prompt": "Data Classification กับ Criticality ต่างกันอย่างไร?",
+      "options": [
+        "เป็นคำเดียวกัน",
+        "Classification เน้นความอ่อนไหว ส่วน Criticality เน้นผลต่อภารกิจ",
+        "Criticality วัดเฉพาะราคาซื้อ",
+        "Classification วัดเฉพาะ Network Ports"
+      ],
+      "answer": 1,
+      "why": "สองมิติแยกกันเพื่อไม่ประเมินบริการที่ไม่มี Sensitive Data ต่ำเกินไป"
+    },
+    {
+      "prompt": "หากไม่มีหลักฐานว่าเปิด MFA ควรบันทึกอะไร?",
+      "options": [
+        "MFA=false โดยมั่นใจทันที",
+        "MFA=not_verified",
+        "MFA=true",
+        "ลบ Asset"
+      ],
+      "answer": 1,
+      "why": "ไม่มีหลักฐานยืนยันไม่เท่ากับพิสูจน์ว่า Control ไม่มีอยู่"
+    }
+  ],
+  "5": [
+    {
+      "prompt": "ทำไม Snapshot วันละครั้งอาจพลาด Cloud Instance?",
+      "options": [
+        "เพราะ Cloud ไม่มี Metadata",
+        "Instance อาจถูกสร้างและลบระหว่างรอบตรวจ",
+        "เพราะทุก Instance มีอายุหลายปี",
+        "เพราะ Logs ใช้ไม่ได้"
+      ],
+      "answer": 1,
+      "why": "Event-based Collection ร่วม Periodic Reconciliation ช่วยครอบคลุมการเปลี่ยนแปลง"
+    },
+    {
+      "prompt": "พบ 5432/tcp open จาก Scanner สรุปอะไรได้?",
+      "options": [
+        "เป็น PostgreSQL ที่มี CVE แน่นอน",
+        "TCP Port ตอบสนองจากจุดตรวจ ต้องยืนยัน Service เพิ่ม",
+        "เครื่องถูกโจมตีแล้ว",
+        "Cloud Policy ปลอดภัย"
+      ],
+      "answer": 1,
+      "why": "Port State เป็น Network Observation ไม่ใช่ Product/Vulnerability Confirmation"
+    },
+    {
+      "prompt": "OpenAPI Discovery มีข้อจำกัดใด?",
+      "options": [
+        "ไม่มีข้อมูล Methods",
+        "อาจไม่แสดง Hidden Routes ที่ไม่ได้อยู่ใน Schema",
+        "ต้องเชื่อม Cloud IAM เสมอ",
+        "บอกสิทธิ์ของผู้ใช้ทุกคนได้ทั้งหมด"
+      ],
+      "answer": 1,
+      "why": "ควรเทียบ Source/Runtime/Gateway เมื่อจำเป็น"
+    },
+    {
+      "prompt": "Container ID ใหม่หลัง Recreate มีความหมายใด?",
+      "options": [
+        "Logical Service ใหม่เสมอ",
+        "Instance ใหม่ที่อาจอยู่ใน Logical Service เดิม",
+        "ต้องมีช่องโหว่ใหม่เสมอ",
+        "ต้องเปิด Public Port ใหม่"
+      ],
+      "answer": 1,
+      "why": "ต้องทำ Asset Correlation แยก Logical และ Runtime IDs"
+    },
+    {
+      "prompt": "ฟีเจอร์ใดลด Duplicate Asset Records?",
+      "options": [
+        "Asset Correlation ด้วย Stable IDs",
+        "เพิ่มสีให้ Dashboard",
+        "ลบ Source Timestamps",
+        "สแกนแต่พอร์ต 80"
+      ],
+      "answer": 0,
+      "why": "Identity Mapping เป็นหัวใจของการรวมข้อมูลหลาย Sources"
+    }
+  ],
+  "6": [
+    {
+      "prompt": "Asset Criticality แตกต่างจาก Vulnerability Severity อย่างไร?",
+      "options": [
+        "เป็นค่าความหมายเดียวกัน",
+        "Criticality วัดคุณค่าต่อธุรกิจ ส่วน Severity วัดความรุนแรงทางเทคนิค",
+        "Severity วัดราคา Hardware",
+        "Criticality ใช้เฉพาะ Internet Assets"
+      ],
+      "answer": 1,
+      "why": "Risk Prioritization ควรใช้หลายมิติร่วมกัน"
+    },
+    {
+      "prompt": "Crown Jewel คืออะไร?",
+      "options": [
+        "ทุก Server ที่เปิด Port",
+        "Asset/Capability ที่เสียหายแล้วกระทบภารกิจสำคัญรุนแรง",
+        "เฉพาะเครื่องราคาแพง",
+        "Software ที่ใช้เทคโนโลยีใหม่"
+      ],
+      "answer": 1,
+      "why": "Crown Jewels ขึ้นกับ Business Impact ไม่ใช่ราคา"
+    },
+    {
+      "prompt": "API Gateway ไม่มีข้อมูลลับแต่ยังมี Criticality สูงเพราะ?",
+      "options": [
+        "มี Dependency-driven Operational Impact",
+        "เป็น Public โดยอัตโนมัติ",
+        "ใช้ HTTPS เท่านั้น",
+        "มี CVSS สูงเสมอ"
+      ],
+      "answer": 0,
+      "why": "Single Point of Failure ส่งผลต่อความสามารถธุรกิจได้"
+    },
+    {
+      "prompt": "Weighted Score 4.5/5 หมายถึงโอกาสโจมตีเท่าไร?",
+      "options": [
+        "90%",
+        "45%",
+        "ตีความเป็น Probability ตรง ๆ ไม่ได้",
+        "4.5%"
+      ],
+      "answer": 2,
+      "why": "โมเดลให้คะแนนเพื่อจัดลำดับตาม Criteria ไม่ใช่ Probability"
+    },
+    {
+      "prompt": "ใครควรยืนยัน Crown Jewel Candidate?",
+      "options": [
+        "Business/Risk Owner ตามอำนาจ",
+        "Scanner อัตโนมัติ",
+        "ผู้ใช้ทั่วไปที่สุ่มเลือก",
+        "เลข Port"
+      ],
+      "answer": 0,
+      "why": "การกำหนด Crown Jewel เป็น Governance Decision ที่ต้องมีเจ้าของธุรกิจ"
+    }
+  ],
+  "7": [
+    {
+      "prompt": "Trust Boundary ใช้ทำอะไร?",
+      "options": [
+        "บอกสีของกล่อง",
+        "แสดงขอบเขตที่สมมติฐานความเชื่อถือเปลี่ยนและต้องตรวจ Controls",
+        "แทน Firewall ทุกชนิด",
+        "ระบุเลข CVSS"
+      ],
+      "answer": 1,
+      "why": "Boundary ชี้จุดที่ต้องตรวจ Authentication/Validation/Authorization"
+    },
+    {
+      "prompt": "Tampering ใน STRIDE หมายถึง?",
+      "options": [
+        "ปลอมตัวตน",
+        "เปลี่ยนข้อมูลโดยไม่ได้รับสิทธิ์",
+        "ทำให้ระบบช้า",
+        "ปฏิเสธการกระทำ"
+      ],
+      "answer": 1,
+      "why": "Tampering เน้น Integrity"
+    },
+    {
+      "prompt": "Nmap บอกได้อย่างไรจาก localhost?",
+      "options": [
+        "Internet Reachability แน่นอน",
+        "Reachability จาก Loopback ที่ตรวจในเวลานั้น",
+        "Business Risk ทั้งหมด",
+        "Permission ทุก Role"
+      ],
+      "answer": 1,
+      "why": "Vantage Point จำกัดขอบเขตสิ่งที่สรุปได้"
+    },
+    {
+      "prompt": "สิ่งใดเกิดจากการเชื่อม ASM กับ Threat Modeling?",
+      "options": [
+        "ASM พบ Endpoint ใหม่จึงทบทวน Threats/Tests",
+        "ยกเลิกการตรวจ Controls",
+        "ลดจำนวน Assets ใน Inventory โดยอัตโนมัติ",
+        "ปิด Logs"
+      ],
+      "answer": 0,
+      "why": "Discovery Change ควรกระตุ้น Threat Model Review"
+    },
+    {
+      "prompt": "Threat Hypothesis ควรเปลี่ยนเป็น Confirmed Finding เมื่อใด?",
+      "options": [
+        "ทันทีที่เขียน STRIDE",
+        "เมื่อมี Code/Config/Test Evidence ภายใต้ Scope ที่เหมาะสม",
+        "เมื่อ Port ใช้เลข 443",
+        "เมื่อมี Team ชอบ Scenario นี้"
+      ],
+      "answer": 1,
+      "why": "แยก Threat Hypothesis จาก Evidence-backed Vulnerability"
+    }
+  ],
+  "8": [
+    {
+      "prompt": "CVSS 9.8 หมายถึงโอกาสเจาะ Server 98% หรือไม่?",
+      "options": [
+        "ใช่",
+        "ไม่ เพราะ CVSS เป็น Severity ไม่ใช่ Host-specific Probability",
+        "ใช่หากใช้ Docker",
+        "ใช่หากมี Public IP"
+      ],
+      "answer": 1,
+      "why": "Severity ต้องรวม Reachability/Controls/Business Context เพื่อประเมิน Risk"
+    },
+    {
+      "prompt": "npm audit ผ่านแต่ Login ใช้งานไม่ได้หลังอัปเดต ควรทำอย่างไร?",
+      "options": [
+        "ปิด Finding ทันที",
+        "ตรวจ Regression/Compatibility และแก้ก่อน Deploy",
+        "ลบ Tests",
+        "ลด Severity โดยอัตโนมัติ"
+      ],
+      "answer": 1,
+      "why": "ต้องผ่าน Security และ Functional Validation"
+    },
+    {
+      "prompt": "Finding ที่แก้ใน Source แล้วแต่ยังไม่ Deploy ควรมี Status อะไร?",
+      "options": [
+        "Closed Production",
+        "Fixed in code / Pending deployment verification",
+        "Incident Resolved",
+        "No Finding"
+      ],
+      "answer": 1,
+      "why": "การแก้ Code ไม่รับประกัน Runtime"
+    },
+    {
+      "prompt": "EPSS ให้อะไร?",
+      "options": [
+        "Host-specific breach probability",
+        "Forecast CVE exploitation in the wild within 30 days",
+        "รายชื่อ DB Tables",
+        "ความเสียหายเป็นเงินบาท"
+      ],
+      "answer": 1,
+      "why": "EPSS เป็นการคาดการณ์ระดับ CVE ไม่ใช่โอกาสต่อ Host โดยเฉพาะ"
+    },
+    {
+      "prompt": "Remediation Complexity สูงสำหรับ Critical Finding ควรทำอะไร?",
+      "options": [
+        "ปล่อยค้างโดยไม่มีแผน",
+        "พิจารณา Temporary Mitigation พร้อมแผน Fix/Validation",
+        "ลบ Owner",
+        "ตั้ง Risk=Low โดยอัตโนมัติ"
+      ],
+      "answer": 1,
+      "why": "Complexity ช่วยวางแผนแต่ไม่ใช่เหตุผลเพิกเฉยต่อความเสี่ยง"
+    }
+  ],
+  "9": [
+    {
+      "prompt": "การถอด Host Port ของ Internal API โดยยังใช้ Docker Network ร่วมกับ Web ให้ผลอะไร?",
+      "options": [
+        "Web ติดต่อ Internal API ไม่ได้เสมอ",
+        "ลด Host Publishing แต่รักษา Internal Connectivity ได้ตาม Config",
+        "ต้องเปิด Internet Port อีกอัน",
+        "ทุก Network Risk หายหมด"
+      ],
+      "answer": 1,
+      "why": "Host Port Publishing แยกจาก Container-to-Container Connectivity"
+    },
+    {
+      "prompt": "การปิด FastAPI /docs มีผลอะไร?",
+      "options": [
+        "ปิด API ทุกตัว",
+        "ลด Documentation Interface แต่ไม่แทน Authentication",
+        "สร้าง MFA ให้อัตโนมัติ",
+        "ปิด Docker Network"
+      ],
+      "answer": 1,
+      "why": "API Routing และ Docs Configuration เป็นคนละเรื่อง"
+    },
+    {
+      "prompt": "Least Privilege ช่วยลด Surface แบบไหน?",
+      "options": [
+        "Identity/Permission Surface",
+        "เฉพาะ Physical Server Count",
+        "เฉพาะ Disk Size",
+        "เฉพาะ TCP Packet Count"
+      ],
+      "answer": 0,
+      "why": "การจำกัดสิทธิ์ลดสิ่งที่ Credential ที่รั่วอาจทำได้"
+    },
+    {
+      "prompt": "Ports ลดจาก 10 เป็น 4 สรุปอะไรได้?",
+      "options": [
+        "Cyber Risk ลด 60% แน่นอน",
+        "จำนวน Host-published Endpoints ใน Scope ลด 60%",
+        "CVE ลด 60%",
+        "Business Impact ลด 60%"
+      ],
+      "answer": 1,
+      "why": "Metric เฉพาะ Surface ไม่เท่ากับ Risk Reduction Metric"
+    },
+    {
+      "prompt": "ก่อนลบ Old Admin Service ควรทำอะไร?",
+      "options": [
+        "ลบทันทีเมื่อไม่มี Traffic 7 วัน",
+        "Review Owner, Dependencies, Retention, Credentials และ Approval",
+        "แค่เปลี่ยนชื่อ Container",
+        "ปิด Logging"
+      ],
+      "answer": 1,
+      "why": "Decommissioning ต้องมี Lifecycle Process และ Evidence"
+    }
+  ],
+  "10": [
+    {
+      "prompt": "Prometheus up{job=\"api\"}=0 หมายถึงอะไร?",
+      "options": [
+        "API หยุดธุรกิจแน่นอน",
+        "Prometheus Scrape Target ไม่สำเร็จ",
+        "พบการโจมตีแล้ว",
+        "DB ถูกลบแล้ว"
+      ],
+      "answer": 1,
+      "why": "ต้องตรวจ Functional Readiness และ Target Reachability เพิ่ม"
+    },
+    {
+      "prompt": "Alert Rule for: 1m หมายถึง?",
+      "options": [
+        "Query ทุก 1 นาที",
+        "เงื่อนไขต้องคงอยู่ประมาณ 1 นาทีก่อน Firing",
+        "Restart Service ภายใน 1 นาที",
+        "ส่ง SMS ทุกนาที"
+      ],
+      "answer": 1,
+      "why": "for ใช้ระยะ Pending Before Firing"
+    },
+    {
+      "prompt": "Metrics หายไปทั้งหมด สิ่งใดช่วยตรวจ?",
+      "options": [
+        "absent/no-data handling",
+        "ตั้ง threshold สูงขึ้นเท่านั้น",
+        "ลบ job label",
+        "ไม่มีวิธี"
+      ],
+      "answer": 0,
+      "why": "Rule ที่เปรียบเทียบค่าอาจไม่มี Series ให้ประเมินหาก Target ถูกลบจาก Discovery"
+    },
+    {
+      "prompt": "Metrics UP แต่ Checkout Fail ข้อใดเหมาะสม?",
+      "options": [
+        "ถือว่าระบบปกติ",
+        "เพิ่ม Functional Synthetic/Business Metrics",
+        "ปิด Alert",
+        "สรุปว่าเป็น DDoS"
+      ],
+      "answer": 1,
+      "why": "Infrastructure Liveness ไม่เท่ากับ Business Workflow"
+    },
+    {
+      "prompt": "หลัง Incident ควรทำอะไร?",
+      "options": [
+        "ลบ Alert Logs",
+        "Run Post-incident Review และปรับ Controls/Runbook",
+        "ลด Severity ทุก Rule",
+        "ถือว่าไม่มีบทเรียน"
+      ],
+      "answer": 1,
+      "why": "Feedback Loops ช่วยเพิ่มคุณภาพ Detection/Response อย่างต่อเนื่อง"
+    }
+  ],
+  "11": [
+    {
+      "prompt": "ทำไม ECDSA กับ SHA-256 ต้องประเมิน Quantum Threat ต่างกัน?",
+      "options": [
+        "มี Security Properties/Quantum Algorithms ที่เกี่ยวข้องต่างกัน",
+        "เพราะ SHA-256 คือ TLS",
+        "เพราะ ECDSA เป็น Database",
+        "เพราะ Quantum ทำลายทุกอย่างทันที"
+      ],
+      "answer": 0,
+      "why": "Shor กระทบ ECC/RSA ต่างจาก Quantum Search ที่เกี่ยวกับ Hash Functions"
+    },
+    {
+      "prompt": "ML Anomaly Detection มีข้อจำกัดใด?",
+      "options": [
+        "ไม่เกิด False Positive",
+        "ต้องประเมิน False Positives/Negatives, Drift และ Data Quality",
+        "แทน Authorization ได้",
+        "ยืนยัน Cyberattack จาก Outlier ทุกตัว"
+      ],
+      "answer": 1,
+      "why": "ML ให้ Candidate Findings ไม่ใช่เหตุโจมตีที่ยืนยันแล้ว"
+    },
+    {
+      "prompt": "Edge Device ส่งไฟล์กับ Hash ที่ตรงกัน พิสูจน์อะไรได้?",
+      "options": [
+        "Device Identity และเวลาจริงทั้งหมด",
+        "Bytes ตรงกับ Digest ภายใต้เงื่อนไขการอ้างอิงที่เชื่อถือได้",
+        "ไม่มีใครขโมย Device",
+        "Upload ได้รับการอนุมัติแล้ว"
+      ],
+      "answer": 1,
+      "why": "Hash Matching ไม่เท่ากับ Provenance/Trusted Time"
+    },
+    {
+      "prompt": "AI Agent ควรใช้สิทธิ์ Production แบบไหน?",
+      "options": [
+        "Administrator Full Access ตลอดเวลา",
+        "Read-only เริ่มต้นพร้อม Tool-side Authorization/Approval สำหรับ Privileged Actions",
+        "ใช้ Token ที่แปะใน Prompt",
+        "ไม่ต้องเก็บ Audit"
+      ],
+      "answer": 1,
+      "why": "Least Privilege และ Human Oversight สำคัญต่อ Agent Integrations"
+    },
+    {
+      "prompt": "Crypto Agility คืออะไร?",
+      "options": [
+        "เปลี่ยนทุก Hash เป็น ML-DSA",
+        "ความสามารถเปลี่ยน Cryptographic Algorithms/Providers โดยคงความถูกต้องและ Interoperability",
+        "เข้ารหัสทุกไฟล์สองครั้งเสมอ",
+        "ปิด TLS"
+      ],
+      "answer": 1,
+      "why": "Cryptographic Migration ต้องคุม Keys, Protocols, Historical Verification และ Compatibility"
+    }
+  ]
+}

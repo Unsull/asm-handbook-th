@@ -1,0 +1,22 @@
+{
+  "name": "asm-handbook-th",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Independent Thai-language learning guide for Attack Surface Management",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev docs --host 127.0.0.1",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs --host 127.0.0.1",
+    "validate:content": "python scripts/validate_content.py",
+    "test:labs": "python scripts/run_lab_tests.py"
+  },
+  "devDependencies": {
+    "vitepress": "1.6.4",
+    "vue": "3.5.18",
+    "markdown-it-mathjax3": "^4.0.0"
+  }
+}

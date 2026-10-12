@@ -1,0 +1,6 @@
+asset,business,operational,data,dependency,exposure
+Orders Database,5,5,5,5,2
+Payment Credentials,5,4,5,4,3
+Checkout API,5,5,4,5,4
+Marketing Preview,2,2,1,1,2
+Monitoring,3,4,2,3,2

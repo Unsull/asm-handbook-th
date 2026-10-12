@@ -1,0 +1,5 @@
+asset,network,application,identity,cloud,saas,supply_chain
+Customer Web,1,1,0,1,0,1
+Reservations SaaS,0,1,1,1,1,1
+Build Runner,1,0,1,1,0,1
+Smart Camera,1,0,1,0,1,1

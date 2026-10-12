@@ -1,0 +1,4 @@
+asset,primitive,purpose,owner,verification_status,quantum_migration_consideration
+Website TLS,inspect deployed suite,transport encryption,Web Team,pending,review TLS certificate/key establishment
+Order Export Signature,verify algorithm,document signing,Operations,pending,review asymmetric signatures
+Order Content Hash,SHA-256,integrity,API Team,design-only,document hash versioning

@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "slug": "01-foundations",
+    "title": "Laying the Groundwork: An Overview of Attack Surface Management",
+    "thai": "พื้นฐานและวงจรการจัดการ Attack Surface",
+    "toc": [
+      "Attack Surface Management: What It Is and Why It Matters",
+      "The Components of ASM",
+      "The Strategic Role of ASM in Cybersecurity",
+      "Adopting the Attacker’s Perspective",
+      "ASM Use Cases and Security Challenges"
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "02-types-of-surfaces",
+    "title": "Types of Attack Surfaces",
+    "thai": "ประเภท Attack Surface และขอบเขตความเชื่อถือ",
+    "toc": [
+      "The Ever-Expanding Organizational Attack Surface",
+      "Traditional IT Components",
+      "Modern IT Components",
+      "Cloud",
+      "SaaS",
+      "Identity",
+      "Supply Chain",
+      "BYOD and Mobile",
+      "Artificial Intelligence"
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "03-risk",
+    "title": "How the Attack Surface Relates to Risk",
+    "thai": "จาก Exposure สู่การประเมินความเสี่ยง",
+    "toc": [
+      "Measuring Risk",
+      "Qualitative Risk",
+      "Quantitative Risk",
+      "Determining the Right Fit",
+      "Risk Frameworks",
+      "Communicating Risk to Your Business Team"
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "04-asset-identification",
+    "title": "Identification and Classification of Assets",
+    "thai": "ค้นหา จัดประเภท และเพิ่มบริบทของสินทรัพย์",
+    "toc": [
+      "Identification",
+      "Asset Inventory",
+      "Discovery of Assets",
+      "Classification for Asset Enrichment",
+      "Integrating Asset Enrichment with Business Strategy"
+    ]
+  },
+  {
+    "id": 5,
+    "slug": "05-automated-discovery",
+    "title": "Automating Asset Discovery",
+    "thai": "ค้นหาและติดตามสินทรัพย์โดยอัตโนมัติ",
+    "toc": [
+      "Importance of Automating Asset Discovery",
+      "Breadth of Enterprises",
+      "Cloud Complications",
+      "Types of Automated Asset Discovery",
+      "Features That Deliver High ROI"
+    ]
+  },
+  {
+    "id": 6,
+    "slug": "06-prioritization",
+    "title": "Prioritization and Crown Jewel Analysis",
+    "thai": "รู้จักสินทรัพย์สำคัญและตัดสินใจจัดลำดับ",
+    "toc": [
+      "Understanding Prioritization",
+      "Prioritization Criteria",
+      "Obtaining Business Context",
+      "Mapping Business Functions",
+      "Impact Assessment",
+      "Determining Actual Prioritization",
+      "Determining Crown Jewels",
+      "Identifying Other High-Value Assets",
+      "Ranking Everything Else"
+    ]
+  },
+  {
+    "id": 7,
+    "slug": "07-attack-surface-analysis",
+    "title": "Measuring Attack Surface",
+    "thai": "วิเคราะห์ Data Flow, Trust Boundary และ Threats",
+    "toc": [
+      "Attack Surface Analysis",
+      "Internal and External Attack Surfaces",
+      "Tools for Assessing Attack Surfaces",
+      "Threat Modeling",
+      "Integrating Threat Modeling with Attack Surface Mapping"
+    ]
+  },
+  {
+    "id": 8,
+    "slug": "08-remediation",
+    "title": "Remediation",
+    "thai": "แก้ช่องโหว่และพิสูจน์ผลการแก้ไข",
+    "toc": [
+      "Assessing the Remediation Need",
+      "Prioritization of Findings",
+      "Remediation Strategies",
+      "Validation of Remediation Efforts"
+    ]
+  },
+  {
+    "id": 9,
+    "slug": "09-minimization",
+    "title": "Minimizing Attack Surfaces",
+    "thai": "ลดช่องทางที่ไม่จำเป็น โดยไม่ทำลาย Business Workflow",
+    "toc": [
+      "How to Minimize Attack Surfaces",
+      "Strategic Methods",
+      "Tactical Techniques"
+    ]
+  },
+  {
+    "id": 10,
+    "slug": "10-monitoring",
+    "title": "Continuous Monitoring and Management",
+    "thai": "Monitoring, Alerting และ Incident Response",
+    "toc": [
+      "The Dynamic Nature of Digital Ecosystems",
+      "Setting Alert Thresholds",
+      "Integrating with Incident Response",
+      "Periodic Reviews and Audits",
+      "Feedback Loops and Continuous Improvement",
+      "Automation and AI in Continuous Monitoring"
+    ]
+  },
+  {
+    "id": 11,
+    "slug": "11-future",
+    "title": "The Future of Attack Surface Management",
+    "thai": "AI/ML, Quantum, Edge และการปรับตัวระยะยาว",
+    "toc": [
+      "Emerging Trends in Attack Surface Management",
+      "Evolving Challenges in Cybersecurity",
+      "Staying Ahead in ASM Practices and Technologies",
+      "Continuous Learning and Skill Development",
+      "Stay Hungry, Never Give Up"
+    ]
+  }
+]

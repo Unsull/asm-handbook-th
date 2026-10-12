@@ -1,0 +1,14 @@
+name: asm9-isolated-lab
+services:
+  web:
+    image: nginx:stable-alpine
+    ports:
+      - "127.0.0.1:18088:80"
+    networks: [lab]
+  internal-api:
+    image: nginx:stable-alpine
+    ports:
+      - "127.0.0.1:18089:80"
+    networks: [lab]
+networks:
+  lab: {}

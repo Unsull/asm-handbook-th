@@ -1,0 +1,4 @@
+threat_id,target,stride,scenario,evidence,status,control,owner
+TM-01,Orders API,Information Disclosure,Customer A might read customer B order,pending,hypothesis,Object-level authorization and negative tests,API Team
+TM-02,Refund API,Elevation of Privilege,Worker token could execute refund,pending,hypothesis,Scope-limited machine identity,Payment Team
+TM-03,Login,Spoofing,Account session misuse,pending,hypothesis,MFA and session protections,Identity Team

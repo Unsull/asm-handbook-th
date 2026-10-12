@@ -1,0 +1,5 @@
+asset_id,asset,entry_point,owner,trust_zone,verification
+APP-01,Customer Web,HTTPS 443,Web Team,Public,architecture-only
+API-01,Order API,HTTPS gateway,API Team,Application,architecture-only
+DB-01,Orders DB,TCP 5432 from API,Data Team,Private,architecture-only
+ID-01,CI deploy token,GitHub Actions,DevOps,CI,needs-review

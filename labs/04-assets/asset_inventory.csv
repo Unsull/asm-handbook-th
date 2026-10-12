@@ -1,0 +1,5 @@
+asset_id,name,type,environment,owner,classification,criticality,status,verification
+APP-01,Booking Web,web,production,Web Team,public,high,active,architecture-only
+API-01,Booking API,api,production,Booking Team,confidential,critical,active,architecture-only
+DB-01,Reservations DB,database,production,Data Team,confidential,critical,active,architecture-only
+OPS-01,Old Batch Job,job,staging,,internal,low,active,needs-review

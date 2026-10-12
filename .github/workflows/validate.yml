@@ -1,0 +1,25 @@
+name: Validate learning content and labs
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate chapters, paths and quizzes
+        run: python scripts/validate_content.py
+      - name: Run standard-library lab tests
+        run: python scripts/run_lab_tests.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Build static site
+        run: npm run docs:build
