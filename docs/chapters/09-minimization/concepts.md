@@ -30,7 +30,7 @@
 
 ### Host/Network Surface
 
-ตรวจ `docker ps --format "table {{.Names}}\t{{.Ports}}"` และ `Get-NetTCPConnection -State Listen` แล้วระบุ Host Ports ที่ไม่จำเป็น การ Publish Port `0.0.0.0` อาจเปิดหลาย Host Interfaces ขณะที่ `127.0.0.1` มีข้อจำกัดตาม Docker/OS Version จึงต้องยืนยัน Effective Reachability จาก Vantage ที่ถูกต้อง
+ตรวจ <code v-pre>docker ps --format "table {{.Names}}\t{{.Ports}}"</code> และ `Get-NetTCPConnection -State Listen` แล้วระบุ Host Ports ที่ไม่จำเป็น การ Publish Port `0.0.0.0` อาจเปิดหลาย Host Interfaces ขณะที่ `127.0.0.1` มีข้อจำกัดตาม Docker/OS Version จึงต้องยืนยัน Effective Reachability จาก Vantage ที่ถูกต้อง
 
 ### Container Runtime
 
